@@ -4,7 +4,7 @@ import example from '../../assets/example.png';
 const FirstPage = () => {
   return (
     <Container>
-      <Title>First Page</Title>
+      <Title>Catalog Page</Title>
       <StyledImage src={example} alt="Example" />
     </Container>
   );
