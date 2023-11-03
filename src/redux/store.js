@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { contactsReducer } from './adverts/advertsSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { adverts: contactsReducer },
 });

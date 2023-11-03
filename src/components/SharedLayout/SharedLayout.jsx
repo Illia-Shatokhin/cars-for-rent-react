@@ -2,15 +2,15 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 
-const SharedLayout = () => {
+export default function SharedLayout() {
   return (
     <>
       <Header />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </main>
     </>
   );
-};
-
-export default SharedLayout;
+}

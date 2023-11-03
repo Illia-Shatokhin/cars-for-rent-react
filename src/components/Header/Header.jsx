@@ -1,28 +1,28 @@
+import { Link } from 'react-router-dom/dist';
 import {
   HeaderContainer,
+  HeaderLinks,
+  Logo,
   Navigation,
-  StyledLink,
-  IconWrapper,
 } from './Header.styled';
-import sprite from '../../assets/sprite.svg';
+import logo from '../../assets/car-rental-logo.png';
+import { StyledContainer } from '../Container/Container.styled';
 
 export const Header = () => {
   return (
-    <HeaderContainer>
-      <Navigation>
-        <StyledLink to="/catalog">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          Catalog
-        </StyledLink>
-        <StyledLink to="/favorites">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          Favorites
-        </StyledLink>
-      </Navigation>
-    </HeaderContainer>
+    <header>
+      <StyledContainer>
+        <HeaderContainer>
+          <Link to="/">
+            <Logo src={logo} alt="logo" />
+          </Link>
+          <Navigation>
+            <HeaderLinks to="/">Home</HeaderLinks>
+            <HeaderLinks to="/catalog">Catalog</HeaderLinks>
+            <HeaderLinks to="/favorites">Favorites</HeaderLinks>
+          </Navigation>
+        </HeaderContainer>
+      </StyledContainer>
+    </header>
   );
 };
